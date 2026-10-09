@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorteador Online</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <p class="eyebrow">PROJETO PRÁTICO</p>
+        <h1>Sorteador Online</h1>
+        <p class="subtitle">
+          Digite nomes ou itens separados por vírgula ou por linha.
+        </p>
+
+        <form id="sorteadorForm">
+          <label for="listaEntrada">Itens para o sorteio</label>
+
+          <textarea
+            id="listaEntrada"
+            rows="6"
+            placeholder="Exemplo: Ana, Bruno, Carla, Daniel"
+            aria-describedby="ajudaEntrada"
+          ></textarea>
+
+          <p id="ajudaEntrada" class="help-text">
+            Separe os itens por vírgula ou pressione Enter.
+          </p>
+
+          <div class="button-group">
+            <button id="btnSortear" class="btn-primary" type="submit">
+              Sortear agora
+            </button>
+            <button id="btnLimpar" class="btn-secondary" type="button">
+              Limpar
+            </button>
+          </div>
+        </form>
+
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+
+        <section
+          id="resultadoBox"
+          class="resultado-container hidden"
+          aria-live="polite"
+        >
+          <p class="result-label">O grande vencedor foi:</p>
+          <div id="resultado" class="ganhador-destaque">---</div>
+        </section>
+
+        <section id="historicoBox" class="historico-container hidden">
+          <h2>🏆 Histórico de vencedores</h2>
+          <ul id="historico"></ul>
+          <button
+            id="btnLimparHistorico"
+            class="btn-secondary btn-historico"
+            type="button"
+          >
+            Limpar histórico
+          </button>
+        </section>
+
+        <p class="footer-text">Feito com HTML, CSS e JavaScript.</p>
+      </section>
+    </main>
+  </body>
+</html>
